@@ -21,7 +21,7 @@ Usage
 
 The Azure scripts assume the Azure CLI is installed, logged in, and associated with the subscription you wish to use. The Google scripts assume the Google Cloud SDK client is installed, logged in, and configured with the project you with to use. There isn't any particular error handling for when these assumptions aren't true.
 
-From a shell on a system with the appropriate clients installed and configured, simply run the `azure.sh`, `azure-self.sh`, `google.sh`, `google-ha.sh`, or `google-self.sh` script and wait. The scripts will provision the necessary cloud resources, run the benchmarks, then delete the cloud resources. The report will be in the fiel report-*scenario*-*nonce*.txt, where *nonce* is a unique string generated per run.
+From a shell on a system with the appropriate clients installed and configured, simply run the `azure.sh`, `azure-self.sh`, `google.sh`, `google-ha.sh`, or `google-self.sh` script and wait. The scripts will provision the necessary cloud resources, run the benchmarks, then delete the cloud resources. The report will be in the file report-*scenario*-*nonce*.txt, where *nonce* is a unique string generated per run.
 
 The `pgbench.sh` and `pgserver.sh` scripts are not meant to be run directly; they are used by the scenario scripts.
 
