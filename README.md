@@ -35,5 +35,5 @@ As with all benchmarks, the results are only as good as your understanding of th
 To-do
 -----
 
- - It would be nice to factor out come of the commonalities between the scripts to reduce duplication of code between them.
+ - It would be nice to factor out some of the commonalities between the scripts to reduce duplication of code between them.
  - Perhaps add Amazon cloud support?
