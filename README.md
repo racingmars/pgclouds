@@ -28,7 +28,7 @@ The `pgbench.sh` and `pgserver.sh` scripts are not meant to be run directly; the
 Warnings and disclaimers
 ------------------------
 
-If anything goes wrong, these scripts will **not** delete the cloud resources that they provision. If you don't want to be on the hook with unexpected cloud costs, **you should always manually check your cloud services to ensure that the resources are deleted when you're done with the sescripts**. This is good practice even if everything goes well.
+If anything goes wrong, these scripts will **not** delete the cloud resources that they provision. If you don't want to be on the hook with unexpected cloud costs, **you should always manually check your cloud services to ensure that the resources are deleted when you're done with the scripts**. This is good practice even if everything goes well.
 
 As with all benchmarks, the results are only as good as your understanding of the tests and the implications of the choices in setting up the tests. Note that as the scripts exist in this repository, there are several areas that prevent the scenarios from being truly comparable. This includes a difference in CPU resources assigned to the managed databases versus the self-hosted databases. I made these tests for my specific needs, but you'll need to change them for yours.
 
