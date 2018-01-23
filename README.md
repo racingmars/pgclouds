@@ -13,15 +13,20 @@ The scenarios are:
  - `azure.sh`: Azure managed Postgres service.
  - `azure-self.sh`: Azure VM running Postgres.
  - `google.sh`: Google managed Postgres service.
- - `google-ha.sh`: Google managed Postgres service with synchronous high-availability enabled. (Since it isn't clear what the replication strategy, if there is one, of Azure is, this test provides a "worst case" test of syncronous replcation to ensure that if Azure is also doing something similar, the numbers are fair to compare. Spoiler alert: there was no meaningful difference between this and `google.sh`.)
+ - `google-ha.sh`: Google managed Postgres service with synchronous high-availability enabled (Spoiler alert: there was no meaningful difference between this and `google.sh`.)
  - `google-self.sh`: Google VM running Postgres.
 
 Usage
 -----
 
-The Azure scripts assume the Azure CLI is installed, logged in, and associated with the subscription you wish to use. The Google scripts assume the Google Cloud SDK client is installed, logged in, and configured with the project you with to use. There isn't any particular error handling for when these assumptions aren't true.
+Prerequisites:
+ * You must have an SSH RSA key created, with the public key in ~/.ssh/id_rsa.pub.
+ * The Azure scripts assume the Azure CLI is installed, logged in, and associated with the subscription you wish to use.
+ * The Google scripts assume the Google Cloud SDK client is installed, logged in, and configured with the project you wish to use.
 
-From a shell on a system with the appropriate clients installed and configured, simply run the `azure.sh`, `azure-self.sh`, `google.sh`, `google-ha.sh`, or `google-self.sh` script and wait. The scripts will provision the necessary cloud resources, run the benchmarks, then delete the cloud resources. The report will be in the file report-*scenario*-*nonce*.txt, where *nonce* is a unique string generated per run.
+There isn't any particular error handling for when these assumptions aren't true.
+
+From a shell on a system with the appropriate clients installed and configured, simply run the `azure.sh`, `azure-self.sh`, `google.sh`, `google-ha.sh`, or `google-self.sh` script and wait. The scripts will provision the necessary cloud resources, run the benchmarks, then delete the cloud resources. The report will be in the file `report-scenario-nonce.txt`, where *scenario* is the scenario name and *nonce* is a unique string generated per run.
 
 The `pgbench.sh` and `pgserver.sh` scripts are not meant to be run directly; they are used by the scenario scripts.
 

@@ -12,6 +12,12 @@ PASSWORD=$(base64 /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 20 | head -n 1)
 # We don't expect any pipelines to have error components from here on out
 set -o pipefail
 
+if ! [ -e ~/.ssh/id_rsa.pub ]
+then
+    echo "ERROR: ~/.ssh/id_rsa.pub must exist"
+    exit 1
+fi
+
 echo Instance: $INSTANCE_NONCE
 echo Password: $PASSWORD
 
